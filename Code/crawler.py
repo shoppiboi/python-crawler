@@ -37,7 +37,6 @@ class Crawler:
         if self.depth >= 1:
             self.checks()
             
-
     def checks(self): #performs some basic checks
 
         if self.domain not in Crawler.domains: # adds the domain to the visited-list 
@@ -69,7 +68,6 @@ class Crawler:
                 
                 if self.depth > 0:
                     self.spawncrawler() #spawns new crawlers for each link found on the previous website
-
 
             elif self.response.status_code == 404:
                 print("Link not found")
@@ -118,10 +116,8 @@ class Crawler:
                 except IndexError:
                     continue
             
-            
         return linksFound
     
-
     def cleanuplinks(self, newLinks): # makes the links found more 'clean' and adds them to a new list
 
         freshList = []
